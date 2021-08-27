@@ -3,8 +3,9 @@ const layouts = require('express-ejs-layouts');
 const app = express();
 const port = 3000;
 
-app.set('view engine', 'ejs');
-app.use(layouts);
+app.set('view engine', 'ejs'); // Template Engine
+app.use(layouts); // Main Layout
+app.use(express.static('public')); // Middleware
 
 app.get('/', (req, res) => {
   const mahasiswa = [
